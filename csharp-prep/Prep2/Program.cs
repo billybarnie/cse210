@@ -72,7 +72,7 @@ class Program
         // Calculates whether user percentile entered is passing or not
         if (number >= 70)
         {
-            Console.WriteLine("Congradulations!! You Passed CSE 210!");
+            Console.WriteLine("Congratulations!! You Passed CSE 210!");
         }
         else
         {
