@@ -27,7 +27,7 @@ class Program
         int num = randGen.Next(1, 100);     // Places random number generator inside a variable and specifies its ceiling
 
         // Asks the user for the magi number and gives it all on one line
-        Console.Write($"What is the magic number? {num}");
+        Console.WriteLine($"What is the magic number? {num}");
 
             do      // Start of Do-While Loop
             {
