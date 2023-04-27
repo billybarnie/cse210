@@ -15,10 +15,6 @@ class Entry
     {
         Console.WriteLine($"{date} {prompt} {response}");
     }
-    public string GetPrompt()
-    {
-        return $"{date} {prompt} {response}";
-    }
     public string entryAsCSV()
     {
         return string.Format("{0}|{1}|{2}", date, prompt, response);

@@ -46,7 +46,7 @@ class Journal
         {
             foreach (Entry entry in entries)
             {
-                newFile.WriteLine(entry.GetPrompt());
+                newFile.WriteLine(entry.entryAsCSV());
             }
         }
     }
@@ -65,7 +65,7 @@ class Journal
 
             foreach (string block in lines)
             {
-                string[] part = block.Split(",");
+                string[] part = block.Split("|");
                 string response = part[2];
                 string prompt = part[1];
                 string date = part[0];
@@ -80,7 +80,7 @@ class Journal
         {
             foreach (string block in lines)
             {
-                string[] part = block.Split(",");
+                string[] part = block.Split("|");
                 string response = part[2];
                 string prompt = part[1];
                 string date = part[0];
