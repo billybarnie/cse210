@@ -120,8 +120,8 @@ class Journal
                    requested is then loaded into the "entries" List in the same format that 
                    it would be had had the overwritten as follows {date}, {prompt}, {response}.
                    All entries they have entered plus the file requested contents will be added 
-                   to gether and it will be clearly seen when they use the display option(2). They 
-                   Can also add the same file or multiple other files to add all the responses 
+                   together and it will be clearly seen when they use the display option(2). They 
+                   can also add the same file or multiple other files to add all the responses 
                    together with ease.
                 */
 
