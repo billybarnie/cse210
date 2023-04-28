@@ -46,7 +46,7 @@ class Journal
         {
             foreach (Entry entry in entries)
             {
-                newFile.WriteLine(entry.entryAsCSV());
+                newFile.WriteLine(entry.EntryAsCSV());
             }
         }
     }
