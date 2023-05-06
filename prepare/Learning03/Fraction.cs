@@ -22,22 +22,6 @@ class Fraction
         _top = top;
         _bottom = bottom;
     }
-    public int GetTop()
-    {
-        return (int)_top;
-    }
-    public void SetTop(int top)
-    {
-        _top = top;
-    }
-    public int GetBottom()
-    {
-        return (int)_bottom;
-    }
-    public void SetBottom(int bottom)
-    {
-        _bottom = bottom;
-    }
     public string GetFractionString()
     {
         string word = $"{_top}/{_bottom}";
