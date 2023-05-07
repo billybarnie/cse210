@@ -55,11 +55,4 @@ class Proverbs
     }
     
 }
-/*  
-    The purpose of the Proverbs class is to randomly get a verse 
-    from the CSV file and print it to the console. The verse has 
-    variables that are assigned and then in the Program class 
-    references the proverbElem in the scripture object so that 
-    a new verse is gotten each time the program is restarted.
-*/
 
