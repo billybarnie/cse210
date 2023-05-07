@@ -4,10 +4,11 @@ class Program
 {
     static void Main(string[] args)
     {
+        Proverbs proverb = new Proverbs();
+        var proverbElem = proverb.ProverbElement();
 
-        Reference scriptureRef = new Reference("Proverbs", "3", "5", "6");
-        Scripture script = new Scripture(scriptureRef, "Trust in the LORD with all thine heart; and lean not unto thine own understanding." + 
-        "In all thy ways acknowledge him, and he shall direct thy paths.");
+        Reference scriptureRef = new Reference(proverbElem.Item1, proverbElem.Item2, proverbElem.Item3);
+        Scripture script = new Scripture(scriptureRef, proverbElem.Item4);
 
         string response = "";
 
@@ -25,8 +26,6 @@ class Program
         Console.Clear();
         Console.WriteLine(script.DisplayScripture());
         Console.WriteLine();
-
-        
 
     }
 }
