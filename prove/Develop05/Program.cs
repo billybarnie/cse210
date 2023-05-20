@@ -69,3 +69,10 @@ class Program
 
     }
 }
+        /*
+            I made a try/catch statement to handle if the file
+            name entered was valid or not. I also decided to put
+            in my own error messages to handle said exception.
+        */
+        
+        
