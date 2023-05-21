@@ -1,4 +1,0 @@
-5360
-1|stay|alive|60|True
-2|study hard|harder|5000|5|5|5000|True
-3|poo|in the toilet|100|False
