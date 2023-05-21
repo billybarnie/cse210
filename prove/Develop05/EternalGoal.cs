@@ -1,10 +1,9 @@
 class EternalGoal : Goal
 {
     private const int goalType = 3;
-    private bool _complete;
     public EternalGoal() {}
 
-    public EternalGoal(string _goalName, string _description, int _pointAmount) : 
+    public EternalGoal(string _goalName, string _description, int _pointAmount, bool complete) : 
     base (_goalName, _description, _pointAmount) 
     {
         _complete = false;

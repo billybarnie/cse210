@@ -6,6 +6,7 @@ abstract class Goal
     private string _description;
     private int _pointAmount;
     protected int _bonusPoints;
+    protected bool _complete;
 
     protected int _timesToComplete;
     public Goal() {}
@@ -69,5 +70,4 @@ abstract class Goal
     }
     public abstract string RecordToCSV();
     public abstract void RecordEvent();
-
 }

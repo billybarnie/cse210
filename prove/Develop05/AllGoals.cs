@@ -38,6 +38,7 @@ class AllGoals
 
         using (StreamWriter newFile = new StreamWriter(file))
         {
+            newFile.WriteLine(_points);
             foreach (Goal goal in _allGoals)
             {
                 newFile.WriteLine(goal.RecordToCSV().Trim());
@@ -66,44 +67,47 @@ class AllGoals
             _allGoals.Clear();
 
             Goal goal = null;
-
+            bool firstLine = true;
             foreach (string goals in goalBlock)
             {
-                
+                    if (firstLine == true)
+                    {
+                        _points = int.Parse(goals);
+                        firstLine = false;
+                    }
+                    else
+                    {
+                        string[] goalPart        = goals.Split("|");
 
-                    string[] goalPart        = goals.Split("|");
+                        int goalType             = int.Parse(goalPart[0]);
 
-                    int goalType             = int.Parse(goalPart[0]);
+                        string goalName          = goalPart[1];
 
-                    string goalName          = goalPart[1];
+                        string goalDescription   = goalPart[2];
 
-                    string goalDescription   = goalPart[2];
-
-                    int goalPoints           = int.Parse(goalPart[3]);
-
-                    int timesComplete        = int.Parse(goalPart[4]);
-
-                    int timesCompleted       = int.Parse(goalPart[5]);
-
-                    int bonus                = int.Parse(goalPart[6]);
-
-                    bool goalCompletion      = bool.Parse(goalPart[7]);
+                        int goalPoints           = int.Parse(goalPart[3]);
 
                     switch (goalType)
                     {
                         case 1:
+                            bool goalCompletion      = bool.Parse(goalPart[4]);
                             goal = new SimpleGoal (goalName, goalDescription, goalPoints, goalCompletion);
                             break;
                         case 2:
-                            goal = new ChecklistGoal (goalName, goalDescription, goalPoints, timesComplete, timesCompleted, bonus, goalCompletion);
+                            int timesComplete        = int.Parse(goalPart[4]);
+                            int timesCompleted       = int.Parse(goalPart[5]);
+                            int bonus                = int.Parse(goalPart[6]);
+                            bool goalComplete        = bool.Parse(goalPart[7]);
+                            goal = new ChecklistGoal (goalName, goalDescription, goalPoints, timesComplete, timesCompleted, bonus, goalComplete);
                             break;
                         case 3:
-                            goal = new EternalGoal (goalName, goalDescription, goalPoints);
+                            bool goalComp            = bool.Parse(goalPart[4]);
+                            goal = new EternalGoal (goalName, goalDescription, goalPoints, goalComp);
                             break;
 
                     }
-                    
                     _allGoals.Add(goal);
+                    }
             }
             }
             catch (FileNotFoundException)

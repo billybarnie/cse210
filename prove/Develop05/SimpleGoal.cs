@@ -2,15 +2,13 @@ class SimpleGoal : Goal
 {
     private const int goalType = 1;
 
-    private bool _complete;
-
     public SimpleGoal() 
     {_complete = false;}
 
-    public SimpleGoal(string goalName, string description, int pointAmount, bool goalCompletion) : 
+    public SimpleGoal(string goalName, string description, int pointAmount, bool complete) : 
     base (goalName, description, pointAmount)
     {
-        _complete = goalCompletion;
+        _complete = complete;
     }
 
     public override string ToString()
@@ -27,6 +25,4 @@ class SimpleGoal : Goal
         Console.WriteLine(string.Format("Congradulations! You got {0} more points", GetPointAmount()));
         _complete = true;
     }
-
-
 }

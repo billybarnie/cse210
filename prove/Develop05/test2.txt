@@ -1,0 +1,4 @@
+160
+1|stay|alive|60|True
+2|study hard|harder|50|0|5|5000|False
+3|poo|in the toilet|100|False

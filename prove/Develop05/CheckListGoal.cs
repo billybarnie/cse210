@@ -1,16 +1,16 @@
 class ChecklistGoal : Goal
 {
     private const int goalType = 2;
-    private bool _complete;
     private int _timesCompleted;
     private int numberForBonus;
 
     public ChecklistGoal() 
     {_complete = false;}
 
-    public ChecklistGoal(string _goalName, string _description, int _pointAmount, int _timesCompleted, int timesToComplete, int bonusPoints, bool complete)
+    public ChecklistGoal(string _goalName, string _description, int _pointAmount, int timesCompleted, int timesToComplete, int bonusPoints, bool complete)
     : base (_goalName, _description, _pointAmount)
     {
+        _timesCompleted     = timesCompleted;
         _bonusPoints        = bonusPoints;
         _timesToComplete    = timesToComplete;
         _complete           = complete;
