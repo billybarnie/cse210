@@ -18,7 +18,12 @@ class Program
             switch(option)
             {
                 case 1:
-                   switches.DownPaymentSwitch();
+                   switch (downPaymentMenu)
+                   {
+                        case 1:
+                            switches.DownPaymentSwitch();
+                            break;
+                   }
                    break;
                 case 2:
                     while(tradeInMenu != 6)

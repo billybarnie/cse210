@@ -9,8 +9,6 @@ class Switch
     {
         int downPaymentMenu = menus.DisplayDownPaymentMenu();
 
-        while (downPaymentMenu != 6)
-        {
             switch(downPaymentMenu)
             {
                 case 1:
@@ -26,7 +24,6 @@ class Switch
                     Console.WriteLine("meanie");
                     break;
             }
-        }
     }
 
 }
