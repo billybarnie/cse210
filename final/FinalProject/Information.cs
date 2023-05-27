@@ -1,7 +1,7 @@
 
 abstract class Information
 {
-    private int _driversLicenseID;
+    private int _driversLicenseID = -1;
     private string _driverClassOnID;
     private string _driversLicenseExpire;
     private string _driversLicenseIssue;
@@ -51,7 +51,7 @@ abstract class Information
     public void DisplayGetIDIssueDate()
     {
         Console.WriteLine();
-        Console.Write("What is the date on your drivers license? ");
+        Console.Write("What is the issue date on your drivers license? ");
         _driversLicenseIssue = Console.ReadLine();
     }
 
@@ -65,7 +65,7 @@ abstract class Information
     public void DisplayGetDateOfBirth()
     {
         Console.WriteLine();
-        Console.Write("What is your date of birth? ");
+        Console.Write("What is your legal date of birth?(MM/DD/YYYY) ");
         _birthDate = Console.ReadLine();
     }
 
@@ -79,7 +79,7 @@ abstract class Information
     public void DisplayGetMiddleName()
     {
         Console.WriteLine();
-        Console.Write("What is your middle initial? ");
+        Console.Write("What is your legal middle name? ");
         _middleName = Console.ReadLine();
     }
 
@@ -93,21 +93,21 @@ abstract class Information
     public void DisplayGetHomeAddress()
     {
         Console.WriteLine();
-        Console.Write("What is your legal place of residence? ");
+        Console.Write("What is your legal place of residence? (city, state and zip as well) ");
         _homeAddress = Console.ReadLine();
     }
 
     public void DisplayGetGender()
     {
         Console.WriteLine();
-        Console.Write("What if your gender? ");
+        Console.Write("What is your gender?(M/F) ");
         _gender = Console.ReadLine();
     }
 
     public void DisplayGetHeight()
     {
         Console.WriteLine();
-        Console.Write("What is your height displayed on your ID? ");
+        Console.Write("What is your height displayed on your ID? Example:(5'10) ");
         _height = Console.ReadLine();
     }
 
@@ -175,6 +175,30 @@ abstract class Information
     {
         return _eyeColor;
     }
-    public abstract string CreditScore();
+
+    public void PersonalInformation()
+    {   
+        Console.Clear();
+        DisplayGetFirstName();
+        DisplayGetMiddleName();
+        DisplayGetLastName();
+        DisplayGetGender();
+        DisplayGetDateOfBirth();
+        DisplayGetHomeAddress();
+        Console.Clear();
+        DisplayGetDriversID();
+        DisplayGetClassID();
+        DisplayGetIDIssueDate();
+        DisplayGetIDExpiration();
+        DisplayGetHeight();
+        DisplayGetEyeColor();
+        GetLastName();
+        
+        SaveToCSV();
+
+    }
+
+    
+    public abstract void SaveToCSV();
 
 }

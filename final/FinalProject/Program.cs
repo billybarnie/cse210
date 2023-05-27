@@ -4,44 +4,24 @@ class Program
 {
     static void Main(string[] args)
     {
-        Menu        menus = new Menu();
-        Switch      switches = new Switch();
-        int         option = 0;
+        Menu               menus = new Menu();
+        SubMenuSwitch      switches = new SubMenuSwitch();
+        int                option = 0;
 
 
         while (option != 3)
         {
-            option =                menus.DisplayMainMenu();
-            int downPaymentMenu =   menus.DisplayDownPaymentMenu();
-            int tradeInMenu =       menus.DisplayTradeInMenu();
+            option = menus.DisplayMainMenu();
 
             switch(option)
             {
                 case 1:
-                   switch (downPaymentMenu)
-                   {
-                        case 1:
-                            switches.DownPaymentSwitch();
-                            break;
-                   }
-                   break;
+                    Console.Clear();
+                    switches.DownPaymentSwitch();
+                    break;
                 case 2:
-                    while(tradeInMenu != 6)
-
-                        switch(tradeInMenu)
-                        {
-                            case 1:
-                                break;
-                            case 2:
-                                break;
-                            case 3:
-                                break;
-                            case 4:
-                                break;
-                            case 5:
-                                break;
-                        }
-                        break;
+                    switches.TradeInSubMenu();
+                    break;
             }
         }
     }

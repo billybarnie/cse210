@@ -2,6 +2,8 @@
 class Menu
 {
     private List<string> mainMenu, tradeInMenu, downPaymentMenu;
+
+    private DownPayment downInfo = new DownPayment();
     public Menu()
 
     {
@@ -54,6 +56,7 @@ class Menu
 
     public int DisplayTradeInMenu()
     {
+        Console.Clear();
         foreach (string menuRequirement in tradeInMenu)
         {
             Console.WriteLine(menuRequirement);
@@ -64,6 +67,7 @@ class Menu
 
     public int DisplayDownPaymentMenu()
     {
+        Console.Clear();
         foreach (string menuRequirement in downPaymentMenu)
         {
             Console.WriteLine(menuRequirement);
