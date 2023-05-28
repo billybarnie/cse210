@@ -36,6 +36,15 @@ class AllVehicleData
         }
     }
 
+    public void TradeInCalculations()
+    {
+
+    }
+
+    public void DownPaymentCalculations()
+    {
+        
+    }
     public void Vehicles()
     {
         vehicleDictionary.Add("kia sportage", new List<int> {2010, 16995});
