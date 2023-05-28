@@ -2,8 +2,9 @@ class SubMenuSwitch
 {
     private int downPayment = 0;
     private int tradeIn = 0;
-    private DownPayment     downInfo = new DownPayment();
-    private TradeIn         tradeInfo = new TradeIn();
+    private DownPayment         downInfo  = new DownPayment();
+    private TradeInInfo         tradeInfo = new TradeInInfo();
+    private AllVehicleData      vehicle   = new AllVehicleData();
     
     Loan                    test = new Loan();
     Menu menus = new Menu();
@@ -24,9 +25,9 @@ class SubMenuSwitch
                     break;
                 case 3:
                     Console.WriteLine("a");
+                    vehicle.VehicleLot();
                     break;
                 case 4:
-                    tradeInfo.GetCreditScore();
                     test.APRInfo();
                     break;
             }

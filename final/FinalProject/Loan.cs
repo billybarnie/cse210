@@ -6,6 +6,8 @@ class Loan
     private string _insuranceName;
     private int _insuranceCostMonthly;
 
+    private int _creditScore = -1;
+
     // I plan on putting more information in here
     public Loan() {}
 
@@ -19,7 +21,12 @@ class Loan
     }
 
     
-
+    public void DisplayGetCreditScore()
+    {
+        Console.Clear();
+        Console.WriteLine("What is your current credit score? ");
+        _creditScore = int.Parse(Console.ReadLine());
+    }
     public void DisplayGetDebtAmount()
     {
         Console.WriteLine();
@@ -65,7 +72,10 @@ class Loan
     {
         return _insuranceCostMonthly;
     }
-    
+    public int GetCreditScore()
+    {
+        return _creditScore;
+    }
     public void APRInfo()
     {
         DisplayGetDebtAmount();

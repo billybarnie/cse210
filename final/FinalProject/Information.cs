@@ -198,7 +198,5 @@ abstract class Information
 
     }
 
-    
     public abstract void SaveToCSV();
-
 }

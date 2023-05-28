@@ -1,19 +1,34 @@
-int a;
+Dictionary<string, List<string>> vehicleDictionary = new Dictionary<string, List<string>>();
 
-Console.WriteLine("Enter size of Array: ");
+        
 
-a = int.Parse(Console.ReadLine());
+string _model;
+string _year;
 
-int[] array = new int[a];
 
-for (int i = 0; i < array.Length; i++)
+
+Console.WriteLine("What is the model and year of the vehicle you desire? ");
+_model = Console.ReadLine();
+
+Console.WriteLine("What is the year of the vehicle desired? ");
+_year = Console.ReadLine();
+
+
+
+    
+
+
+
+
+
+
+/*foreach (var list in vehicleDictionary)
 {
-    Console.Write(array[i] + " ");
+    Console.WriteLine(list.Key);
+
+    foreach(string item in list.Value)
+    {
+        Console.WriteLine(item);
+    }
 }
-Console.ReadLine();
-
-
-
-
-// Use the following code for later
-//Console.WriteLine(array.Count());
+*/

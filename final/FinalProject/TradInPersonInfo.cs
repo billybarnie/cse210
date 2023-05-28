@@ -1,12 +1,20 @@
-class DownPayment : Information
+class TradeInInfo : Information
 {
-    public DownPayment() {}
-
-    public override void CreditScore()
+    private int _vehicleYear;
+    private string _vehicleTradeModel;
+    public void TradeInVehicle()
     {
-        throw new NotImplementedException();
+        Console.WriteLine();
+        Console.WriteLine("What is the model of the vehicle being traded in? ");
+        _vehicleTradeModel = Console.ReadLine();
+
+        Console.WriteLine();
+        Console.WriteLine("What is the year of the vehicle being traded in? ");
+        _vehicleYear = int.Parse(Console.ReadLine());
+
+        
     }
-    
+
     public override void SaveToCSV()
     {
         if(GetFirstName() != "" && GetMiddleName() != "" && GetLastName() != "" && GetDateOfBirth() != "" &&
@@ -41,7 +49,7 @@ class DownPayment : Information
                 GetGender(), GetEyeColor(), GetHeight()));
 
                 newFile.WriteLine();
-                newFile.WriteLine("Information for a Down Payment Approved!");
+                newFile.WriteLine("Information for Trade In Approved so far!");
             }
         }
         else
@@ -49,10 +57,8 @@ class DownPayment : Information
             string fullName = string.Format("{0}{1}{2}Info.txt", GetFirstName(), GetMiddleName(), GetLastName());
             using (StreamWriter newFile = new StreamWriter(fullName))
             {
-                newFile.WriteLine("Due to lack of personal information they have been DENIED for a down payment option.");
+                newFile.WriteLine("Due to lack of personal information they have been DENIED for a trade in option.");
             }
         }
-
     }
-
 }

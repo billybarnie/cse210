@@ -67,7 +67,7 @@ class Menu
 
     public int DisplayDownPaymentMenu()
     {
-        Console.Clear();
+        //Console.Clear();
         foreach (string menuRequirement in downPaymentMenu)
         {
             Console.WriteLine(menuRequirement);
