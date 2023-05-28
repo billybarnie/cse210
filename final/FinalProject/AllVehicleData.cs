@@ -34,7 +34,6 @@ class AllVehicleData
 
             
         }
-        Console.WriteLine(_entireVehicleCost);
     }
 
     public void Vehicles()
