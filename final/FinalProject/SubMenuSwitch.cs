@@ -24,7 +24,6 @@ class SubMenuSwitch
                     Console.WriteLine("are");
                     break;
                 case 3:
-                    Console.WriteLine("a");
                     vehicle.VehicleLot();
                     break;
                 case 4:
