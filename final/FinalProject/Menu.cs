@@ -35,7 +35,7 @@ class Menu
             "Complete options 1-4:",
             "",
             "1. Personal Information",
-            "2. Intial Down Payment",
+            "2. Initial Down Payment",
             "3. Car model and Year desired",
             "4. Credit Score",
             "5. Quit",
@@ -67,7 +67,7 @@ class Menu
 
     public int DisplayDownPaymentMenu()
     {
-        Console.Clear();
+        //Console.Clear();
         foreach (string menuRequirement in downPaymentMenu)
         {
             Console.WriteLine(menuRequirement);

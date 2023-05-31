@@ -1,6 +1,11 @@
 
 abstract class Information
 {
+    private int _loanSize;
+    private int _annualIncome;
+    private string _insuranceName;
+    private int _insuranceCostMonthly;
+    private int _creditScore = -1;
     private int _driversLicenseID = -1;
     private string _driverClassOnID;
     private string _driversLicenseExpire;
@@ -13,7 +18,10 @@ abstract class Information
     private string _gender;
     private string _height;
     private string _eyeColor;
-
+    protected int _monthlyCost;
+    protected int _monthlyWithInsurance;
+    protected Dictionary<string, int> vehicleDictionary = new Dictionary<string, int>();
+    protected Dictionary<string, int> tradeInVehicleDictionary = new Dictionary<string, int>();
     public Information() {}
 
     public Information(int driversLicenseID, string driverClassOnID, string driversLicenseExpire, 
@@ -93,7 +101,7 @@ abstract class Information
     public void DisplayGetHomeAddress()
     {
         Console.WriteLine();
-        Console.Write("What is your legal place of residence? (city, state and zip as well) ");
+        Console.Write("What is your legal place of residence? (city, state and zip included) ");
         _homeAddress = Console.ReadLine();
     }
 
@@ -118,6 +126,38 @@ abstract class Information
         _eyeColor = Console.ReadLine();
     }
 
+    public void DisplayGetCreditScore()
+    {
+        Console.Clear();
+        Console.WriteLine("What is your current credit score? ");
+        _creditScore = int.Parse(Console.ReadLine());
+    }
+    public void DisplayGetDebtAmount()
+    {
+        Console.WriteLine();
+        Console.WriteLine("Do you have any outstanding debts or unpayed loans if so put the total amount here: ");
+        _loanSize = int.Parse(Console.ReadLine());
+    }
+
+    public void DisplayGetAnnualIncome()
+    {
+        Console.WriteLine();
+        Console.WriteLine("What is your annual income? ");
+        _annualIncome = int.Parse(Console.ReadLine());
+    }
+    public void DisplayGetInsuranceCompany()
+    {
+        Console.WriteLine();
+        Console.WriteLine("What is the name of the insurance company that you are working with? ");
+        _insuranceName = Console.ReadLine();
+    }
+    public void DisplayGetInsuranceCost()
+    {
+        Console.WriteLine();
+        Console.WriteLine("What is your monthly insurance cost? ");
+        _insuranceCostMonthly = int.Parse(Console.ReadLine());
+    }
+
     public int GetDriversID()
     {
         return _driversLicenseID;
@@ -140,6 +180,29 @@ abstract class Information
     public string GetDateOfBirth()
     {
         return _birthDate;
+    }
+    public int GetDebtAmount()
+    {
+        return _loanSize;
+    }
+
+    public int GetAnnualIncome()
+    {
+        return _annualIncome;
+    }
+    
+    public string GetInsuranceCompany()
+    {
+        return _insuranceName;
+    }
+    
+    public int GetInsuranceCosts()
+    {
+        return _insuranceCostMonthly;
+    }
+    public int GetCreditScore()
+    {
+        return _creditScore;
     }
 
     public string GetFirstName()
@@ -193,9 +256,17 @@ abstract class Information
         DisplayGetHeight();
         DisplayGetEyeColor();
         GetLastName();
-        
-        SaveToCSV();
 
+    }
+
+    public Dictionary<string, int> GetVehicleDictionary()
+    {
+        return vehicleDictionary;
+    }
+
+    public Dictionary<string, int> GetTradeInDictionary()
+    {
+        return tradeInVehicleDictionary;
     }
 
     public abstract void SaveToCSV();

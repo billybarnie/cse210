@@ -15,8 +15,10 @@ _year = Console.ReadLine();
 
 
 
-    
-
+if (int.Parse(_year) > 2015 && int.Parse(_year) < 2020)
+{
+    int cost = 15000;
+}
 
 
 

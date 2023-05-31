@@ -4,7 +4,6 @@ class SubMenuSwitch
     private int tradeIn = 0;
     private DownPayment         downInfo  = new DownPayment();
     private TradeInInfo         tradeInfo = new TradeInInfo();
-    private AllVehicleData      vehicle   = new AllVehicleData();
     
     Loan                    test = new Loan();
     Menu menus = new Menu();
@@ -19,15 +18,18 @@ class SubMenuSwitch
             {
                 case 1:
                     downInfo.PersonalInformation();
+                    Console.Clear();
                     break;
                 case 2:
-                    Console.WriteLine("are");
+                    downInfo.DisplayGetDownPayment();
                     break;
                 case 3:
-                    vehicle.VehicleLot();
+                    downInfo.DisplayGetModelYear();
+                    downInfo.DisplayMonthlyCost();
                     break;
                 case 4:
                     test.APRInfo();
+                    downInfo.SaveToCSV();
                     break;
             }
         }
@@ -48,13 +50,16 @@ class SubMenuSwitch
                     Console.Clear();
                     break;
                 case 2:
-                    Console.WriteLine("one");
+                    tradeInfo.TradeInVehicle();
                     break;
                 case 3:
-                    Console.WriteLine("was");
+                    tradeInfo.DisplayGetModelYear();
+                    tradeInfo.DisplayMonthlyCost();
+                    
                     break;
                 case 4:
-                    Console.WriteLine("annoying");
+                    test.APRInfo();
+                    tradeInfo.SaveToCSV();
                     break;
             }
         }
