@@ -1,7 +1,7 @@
 
 abstract class Information
 {
-    private int _driversLicenseID = -1;
+    private double _driversLicenseID = -1;
     private string _driverClassOnID;
     private string _driversLicenseExpire;
     private string _driversLicenseIssue;
@@ -28,7 +28,7 @@ abstract class Information
     protected Dictionary<string, int> _tradeInVehicleDictionary = new Dictionary<string, int>();
     public Information() {}
 
-    public Information(int driversLicenseID, string driverClassOnID, string driversLicenseExpire, 
+    public Information(float driversLicenseID, string driverClassOnID, string driversLicenseExpire, 
     string driversLicenseIssue, string birthDate, string firstName, string middleName, 
     string lastName, string homeAddress, string gender, string height, string eyeColor)
     {
@@ -50,7 +50,7 @@ abstract class Information
     {
         Console.Clear();
         Console.Write("What is your drivers Identification number? ");
-        _driversLicenseID = int.Parse(Console.ReadLine());
+        _driversLicenseID = double.Parse(Console.ReadLine());
     }
 
     public void DisplayGetClassID()
@@ -243,7 +243,7 @@ abstract class Information
     {
         return _creditScore;
     }
-    public int GetDriversID()
+    public double GetDriversID()
     {
         return _driversLicenseID;
     }

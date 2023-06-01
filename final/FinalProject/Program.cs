@@ -8,7 +8,10 @@ class Program
         SubMenuSwitch      switches = new SubMenuSwitch();
         int                option = 0;
 
-
+        Console.WriteLine("Hello, and welcome to Kia Auto where we work with and distribute al Kia Models.");
+        Console.WriteLine("How may we assist you today?");
+        Console.WriteLine();
+        
         while (option != 3)
         {
             option = menus.DisplayMainMenu();

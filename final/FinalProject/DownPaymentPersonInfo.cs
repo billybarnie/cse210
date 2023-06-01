@@ -48,7 +48,7 @@ class DownPayment : Information
 
             _monthlyCost = _totalCost / 72;
 
-        Console.WriteLine();
+        Console.Clear();
         Console.WriteLine($"Your monthly payments after putting down {_putDown} on a {_model} is going to be ${_monthlyCost} before insurance. ");
         Thread.Sleep(7000);
 

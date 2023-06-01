@@ -21,8 +21,8 @@ class Loan : Information
 
         _carCostWithInsurance = GetCarCost() + GetInsuranceCosts();
 
-        Console.WriteLine();
-        Console.WriteLine($"The monthly cost of you vehicle with insurance is ${_carCostWithInsurance}");
+        Console.Clear();
+        Console.WriteLine($"The monthly cost of your vehicle with insurance is ${_carCostWithInsurance}");
         Thread.Sleep(7000);
 
     }

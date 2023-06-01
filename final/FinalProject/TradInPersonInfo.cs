@@ -1,9 +1,7 @@
 class TradeInInfo : Information
 {
     private int _entireVehicleCost;
-    
     private string _modelYear;
-    
     private int _totalCost;
     private int _tradeIn;
     private string _model;
