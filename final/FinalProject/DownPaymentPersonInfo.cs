@@ -26,7 +26,7 @@ class DownPayment : Information
     public void DisplayGetYear()
     {
         Console.WriteLine();
-        Console.Write("What is the year of the vehicle you desire?");
+        Console.Write("What is the year of the vehicle you desire? ");
         _year = int.Parse(Console.ReadLine());
     }
     public void DisplayMonthlyCost()
