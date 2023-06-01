@@ -4,9 +4,8 @@ class SubMenuSwitch
     private int tradeIn = 0;
     private DownPayment         downInfo  = new DownPayment();
     private TradeInInfo         tradeInfo = new TradeInInfo();
-    
-    Loan                    test = new Loan();
-    Menu menus = new Menu();
+    private Loan                creditInfo = new Loan();
+    Menu                        menus = new Menu();
 
     public void DownPaymentSwitch()
     {
@@ -24,12 +23,14 @@ class SubMenuSwitch
                     downInfo.DisplayGetDownPayment();
                     break;
                 case 3:
-                    downInfo.DisplayGetModelYear();
+                    downInfo.DisplayGetModel();
+                    downInfo.DisplayGetYear();
                     downInfo.DisplayMonthlyCost();
                     break;
                 case 4:
-                    test.APRInfo();
+                    creditInfo.APRInfo();
                     downInfo.SaveToCSV();
+                    creditInfo.SaveToCSV();
                     break;
             }
         }
@@ -53,13 +54,14 @@ class SubMenuSwitch
                     tradeInfo.TradeInVehicle();
                     break;
                 case 3:
-                    tradeInfo.DisplayGetModelYear();
+                    tradeInfo.DisplayGetModel();
+                    tradeInfo.DisplayGetYear();
                     tradeInfo.DisplayMonthlyCost();
-                    
                     break;
                 case 4:
-                    test.APRInfo();
+                    creditInfo.APRInfo();
                     tradeInfo.SaveToCSV();
+                    creditInfo.SaveToCSV();
                     break;
             }
         }

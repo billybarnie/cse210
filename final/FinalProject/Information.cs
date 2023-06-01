@@ -1,11 +1,6 @@
 
 abstract class Information
 {
-    private int _loanSize;
-    private int _annualIncome;
-    private string _insuranceName;
-    private int _insuranceCostMonthly;
-    private int _creditScore = -1;
     private int _driversLicenseID = -1;
     private string _driverClassOnID;
     private string _driversLicenseExpire;
@@ -19,9 +14,18 @@ abstract class Information
     private string _height;
     private string _eyeColor;
     protected int _monthlyCost;
-    protected int _monthlyWithInsurance;
-    protected Dictionary<string, int> vehicleDictionary = new Dictionary<string, int>();
-    protected Dictionary<string, int> tradeInVehicleDictionary = new Dictionary<string, int>();
+    private int _loanSize;
+    private int _annualIncome;
+    private string _insuranceName;
+    private int _creditScore = -1;
+    private int _insuranceCostMonthly;
+    private int _monthlyVehicleCost;
+    private string _signature;
+    private string _verifyVehicle;
+    private string _vehicleTradeModel;
+    private int _vehicleYear;
+    protected Dictionary<string, int> _vehicleDictionary = new Dictionary<string, int>();
+    protected Dictionary<string, int> _tradeInVehicleDictionary = new Dictionary<string, int>();
     public Information() {}
 
     public Information(int driversLicenseID, string driverClassOnID, string driversLicenseExpire, 
@@ -126,38 +130,119 @@ abstract class Information
         _eyeColor = Console.ReadLine();
     }
 
+    public void DisplayGetSignature()
+    {
+        Console.WriteLine();
+        Console.Write("Please sign your first and last name here: ");
+        _signature = Console.ReadLine();
+    }
+    public void DisplayGetMonthlyCarCost()
+    {
+        Console.WriteLine();
+        Console.Write("What was the cost of the vehicle before insurance? ");
+        _monthlyVehicleCost = int.Parse(Console.ReadLine());
+    }
+    
     public void DisplayGetCreditScore()
     {
         Console.Clear();
-        Console.WriteLine("What is your current credit score? ");
+        Console.Write("What is your current credit score? ");
         _creditScore = int.Parse(Console.ReadLine());
     }
     public void DisplayGetDebtAmount()
     {
         Console.WriteLine();
-        Console.WriteLine("Do you have any outstanding debts or unpayed loans if so put the total amount here: ");
+        Console.Write("Do you have any outstanding debts or unpayed loans if so put the total amount here: ");
         _loanSize = int.Parse(Console.ReadLine());
     }
 
     public void DisplayGetAnnualIncome()
     {
         Console.WriteLine();
-        Console.WriteLine("What is your annual income? ");
+        Console.Write("What is your annual income? ");
         _annualIncome = int.Parse(Console.ReadLine());
     }
     public void DisplayGetInsuranceCompany()
     {
         Console.WriteLine();
-        Console.WriteLine("What is the name of the insurance company that you are working with? ");
+        Console.Write("What is the name of the insurance company that you are working with? ");
         _insuranceName = Console.ReadLine();
     }
     public void DisplayGetInsuranceCost()
     {
         Console.WriteLine();
-        Console.WriteLine("What is your monthly insurance cost? ");
+        Console.Write("What is your monthly insurance cost? ");
         _insuranceCostMonthly = int.Parse(Console.ReadLine());
     }
 
+    public void DisplayGetVerifyVehicle()
+    {
+        Console.WriteLine();
+        Console.Write("Verify the vehicle you are about to purchase by typing the model and year here: ");
+        _verifyVehicle = Console.ReadLine();
+
+    }
+
+    public void DisplayGetTradeModel()
+    {
+        Console.Clear();
+        _tradeInVehicleDictionary.Clear();
+        Console.Write("What is the model of the vehicle being traded in? ");
+        _vehicleTradeModel = Console.ReadLine();
+    }
+
+    public void DisplayGetTradeYear()
+    {
+        Console.WriteLine();
+        Console.Write("What is the year of the vehicle being traded in? ");
+        _vehicleYear = int.Parse(Console.ReadLine());
+    }
+
+    public int GetTradeYear()
+    {
+        return _vehicleYear;
+    }
+    public string GetTradeModel()
+    {
+        return _vehicleTradeModel;
+    }
+    public string GetVerifyVehicle()
+    {
+        return _verifyVehicle;
+    }
+    public int GetDebtAmount()
+    {
+        return _loanSize;
+    }
+
+    public string GetSignature()
+    {
+        return _signature;
+    }
+    public int GetCarCost()
+    {
+        return _monthlyVehicleCost;
+    }
+
+    public int GetAnnualIncome()
+    {
+        return _annualIncome;
+    }
+    
+    public string GetInsuranceCompany()
+    {
+        return _insuranceName;
+    }
+
+    public int GetInsuranceCosts()
+    {
+        return _insuranceCostMonthly;
+    }
+
+    public int GetCreditScore()
+    {
+        return _creditScore;
+    }
     public int GetDriversID()
     {
         return _driversLicenseID;
@@ -180,29 +265,6 @@ abstract class Information
     public string GetDateOfBirth()
     {
         return _birthDate;
-    }
-    public int GetDebtAmount()
-    {
-        return _loanSize;
-    }
-
-    public int GetAnnualIncome()
-    {
-        return _annualIncome;
-    }
-    
-    public string GetInsuranceCompany()
-    {
-        return _insuranceName;
-    }
-    
-    public int GetInsuranceCosts()
-    {
-        return _insuranceCostMonthly;
-    }
-    public int GetCreditScore()
-    {
-        return _creditScore;
     }
 
     public string GetFirstName()
@@ -261,12 +323,12 @@ abstract class Information
 
     public Dictionary<string, int> GetVehicleDictionary()
     {
-        return vehicleDictionary;
+        return _vehicleDictionary;
     }
 
     public Dictionary<string, int> GetTradeInDictionary()
     {
-        return tradeInVehicleDictionary;
+        return _tradeInVehicleDictionary;
     }
 
     public abstract void SaveToCSV();

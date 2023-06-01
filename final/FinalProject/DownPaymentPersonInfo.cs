@@ -4,26 +4,36 @@ class DownPayment : Information
     private int _putDown;
     private int _totalCost;
     private string _model;
-    private int monthlyWithInsurance;
+    private int _year;
+    
     AllVehicleData data = new AllVehicleData();
-    Loan loanInfo = new Loan();
 
     public void DisplayGetDownPayment()
     {
+        Console.Clear();
         Console.WriteLine();
-        Console.WriteLine("How much are you putting down on said vehicle? ");
+        Console.Write("How much are you putting down on said vehicle? ");
         _putDown = int.Parse(Console.ReadLine());
 
     }
-    public void DisplayGetModelYear()
+    public void DisplayGetModel()
     {
         Console.Clear();
-        Console.Write("What is the model any year of the vehicle you desire? ");
+        Console.Write("What is the model of the vehicle you desire? ");
         _model = Console.ReadLine();
+    }
+
+    public void DisplayGetYear()
+    {
+        Console.WriteLine();
+        Console.Write("What is the year of the vehicle you desire?");
+        _year = int.Parse(Console.ReadLine());
     }
     public void DisplayMonthlyCost()
     {
         data.Vehicles();
+
+        _model = _model.ToLower() + " " + _year.ToString();
 
         foreach (var list in data.GetVehicleDictionary())
             {
@@ -42,6 +52,13 @@ class DownPayment : Information
         Console.WriteLine($"Your monthly payments after putting down {_putDown} on a {_model} is going to be ${_monthlyCost} before insurance. ");
         Thread.Sleep(7000);
 
+    }
+
+
+
+    public int GetMonthlyCost()
+    {
+        return _monthlyCost;
     }
 
     public override void SaveToCSV()
@@ -80,7 +97,6 @@ class DownPayment : Information
                 newFile.WriteLine("Information for a Down Payment Approved!");
 
                 newFile.WriteLine();
-                newFile.WriteLine(_model);
 
                 foreach (var list in data.GetVehicleDictionary())
                 {
@@ -99,20 +115,6 @@ class DownPayment : Information
                 newFile.WriteLine();
                 newFile.WriteLine($"{GetFirstName()} {GetLastName()}'s monthly cost on a {_model} is ${_monthlyCost} before insurance. ");
 
-                newFile.WriteLine();
-                newFile.WriteLine($"Your monthly payments after insurance are {loanInfo.DownPaymentCredit()}");
-
-            }
-
-            fullName = string.Format("{0}{1}ApprovalLetter.txt", GetFirstName(), GetLastName());
-            using (StreamWriter newFile = new StreamWriter(fullName))
-            {
-                newFile.WriteLine($"Dear {GetFirstName()} {GetLastName()},");
-                newFile.WriteLine();
-
-                newFile.WriteLine($"You have been approved for the {_model} based on your credit score and income with an estimated cost of ${_monthlyCost} monthly before insurance.");
-
-                newFile.WriteLine();
             }
         }
         else
@@ -121,16 +123,6 @@ class DownPayment : Information
             using (StreamWriter newFile = new StreamWriter(fullName))
             {
                 newFile.WriteLine("Due to lack of personal information they have been DENIED for a down payment option.");
-            }
-
-            fullName = string.Format("{0}{1}DeniedLetter.txt", GetFirstName(), GetLastName());
-            using (StreamWriter newFile = new StreamWriter(fullName))
-            {
-                newFile.WriteLine("We are sorry to tell you but the vehicle that you are trying to get is not in our inventory");
-                newFile.WriteLine("that or your credit and income is too low or have neglected to give out any impairative basic information.");
-
-                newFile.WriteLine();
-
             }
 
         }

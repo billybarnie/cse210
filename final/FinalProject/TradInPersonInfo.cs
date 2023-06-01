@@ -1,61 +1,66 @@
 class TradeInInfo : Information
 {
     private int _entireVehicleCost;
-    private int _vehicleYear;
+    
     private string _modelYear;
-    private string _vehicleTradeModel;
+    
     private int _totalCost;
     private int _tradeIn;
     private string _model;
+    private int _year;
     AllVehicleData data = new AllVehicleData();
     public void TradeInVehicle()
     {
-        Console.WriteLine();
-        Console.WriteLine("What is the model of the vehicle being traded in? ");
-        _vehicleTradeModel = Console.ReadLine();
+        DisplayGetTradeModel();
+        DisplayGetTradeYear();
 
-        Console.WriteLine();
-        Console.WriteLine("What is the year of the vehicle being traded in? ");
-        _vehicleYear = int.Parse(Console.ReadLine());
-
-        if (_vehicleYear >= 2015 && _vehicleYear <= 2020)
+        if (GetTradeYear() >= 2015 && GetTradeYear() <= 2020)
         {
-            _modelYear = _vehicleTradeModel + " " + _vehicleYear.ToString();
-            tradeInVehicleDictionary.Add(_modelYear, 8000);
+            _modelYear = GetTradeModel() + " " + GetTradeYear().ToString();
+            _tradeInVehicleDictionary.Add(_modelYear, 8000);
         }
-        else if (_vehicleYear >= 2010 && _vehicleYear <= 2014)
+        else if (GetTradeYear() >= 2010 && GetTradeYear() <= 2014)
         {
-            _modelYear = _vehicleTradeModel + " " + _vehicleYear.ToString();
-            tradeInVehicleDictionary.Add(_modelYear, 6000);
+            _modelYear = GetTradeModel() + " " + GetTradeYear().ToString();
+            _tradeInVehicleDictionary.Add(_modelYear, 6000);
         }
-        else if (_vehicleYear >= 2005 && _vehicleYear <= 2009)
+        else if (GetTradeYear() >= 2005 && GetTradeYear() <= 2009)
         {
-            _modelYear = _vehicleTradeModel + " " + _vehicleYear.ToString();
-            tradeInVehicleDictionary.Add(_modelYear, 4000);
+            _modelYear = GetTradeModel() + " " + GetTradeYear().ToString();
+            _tradeInVehicleDictionary.Add(_modelYear, 4000);
         }
-        else if (_vehicleYear >= 1999 && _vehicleYear <= 2004)
+        else if (GetTradeYear() >= 1999 && GetTradeYear() <= 2004)
         {
-            _modelYear = _vehicleTradeModel + " " + _vehicleYear.ToString();
-            tradeInVehicleDictionary.Add(_modelYear, 2000);
+            _modelYear = GetTradeModel() + " " + GetTradeYear().ToString();
+            _tradeInVehicleDictionary.Add(_modelYear, 2000);
         }
-        else if (_vehicleYear >= 2021 && _vehicleYear <= 2023)
+        else if (GetTradeYear() >= 2021 && GetTradeYear() <= 2023)
         {
-            _modelYear = _vehicleTradeModel + " " + _vehicleYear.ToString();
-            tradeInVehicleDictionary.Add(_modelYear, 10000);
+            _modelYear = GetTradeModel() + " " + GetTradeYear().ToString();
+            _tradeInVehicleDictionary.Add(_modelYear, 10000);
         }
         
     }
 
-    public void DisplayGetModelYear()
+    public void DisplayGetModel()
     {
         Console.Clear();
-        Console.Write("What is the model any year of the vehicle you desire? ");
+        Console.Write("What is the model of the vehicle you desire? ");
         _model = Console.ReadLine();
+    }
+
+    public void DisplayGetYear()
+    {
+        Console.WriteLine();
+        Console.Write("What is the year of the vehicle you desire?");
+        _year = int.Parse(Console.ReadLine());
     }
 
     public void DisplayMonthlyCost()
     {
         data.Vehicles();
+
+        _model = _model.ToLower() + " " + _year.ToString();
 
         foreach (var list in data.GetVehicleDictionary())
             {
@@ -116,9 +121,6 @@ class TradeInInfo : Information
                 newFile.WriteLine(string.Format("Gender: {0}    Eye Color: {1}   Height: {2}", 
                 GetGender(), GetEyeColor(), GetHeight()));
 
-                newFile.WriteLine();
-                newFile.WriteLine("Information for Trade In Approved so far!");
-
                 foreach (var list in data.GetVehicleDictionary())
                 {
                     if (_model == list.Key)
@@ -142,16 +144,13 @@ class TradeInInfo : Information
                 _monthlyCost = _totalCost / 72;
                 
                 newFile.WriteLine();
-                newFile.WriteLine($"{GetFirstName()} {GetMiddleName()} {GetLastName()}'s monthly payments on a {_model} are going to be ${_monthlyCost} after trade in and before insurance.");
-            }
-
-            fullName = string.Format("{0}{2}ApprovalLetter.txt", GetFirstName(), GetLastName());
-            using (StreamWriter newFile = new StreamWriter(fullName))
-            {
-                newFile.WriteLine($"Dear {GetFirstName()} {GetLastName()},");
+                newFile.WriteLine($"TradeIn Vehicle: {GetTradeModel()}");
                 newFile.WriteLine();
-
-                newFile.WriteLine($"You have been approved for the {_model} based on your credit score and income with an estimated cost of ${_monthlyCost} monthly before insurance.");
+                newFile.WriteLine($"TradeIn Year: {GetTradeYear()}");
+                newFile.WriteLine();
+                newFile.WriteLine($"Trade In cost: ${_tradeIn}");
+                newFile.WriteLine();
+                newFile.WriteLine($"{GetFirstName()} {GetLastName()}'s monthly payments on a {_model} are going to be ${_monthlyCost} after trade in and before insurance.");
             }
         }
         else
