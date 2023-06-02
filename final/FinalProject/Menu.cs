@@ -48,7 +48,6 @@ class Menu
     {
         Console.Clear();
         Console.WriteLine("Hello, and welcome to Kia Auto where we work with and distribute all Kia Models.");
-        Console.WriteLine("How may we assist you today?");
         Console.WriteLine();
         foreach (string menuOption in mainMenu)
         {
