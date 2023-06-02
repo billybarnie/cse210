@@ -30,23 +30,26 @@ class Program
 
 
 /*
-    So far I have created the menus class and the switch class
-    this is responsible for getting whether they are doing a 
-    trade in or a down payment, I have not put all the methods 
-    that need to be called yet inside the switch statement as 
-    I am trying to work my way up to doing so. But the information 
-    base class is responsible for getting all private information 
-    then there is the TradInInfo class and DownPaymentInfo class 
-    that is responible for saving specifically the information 
-    and the type of transaction they are making which is either 
-    trading something in or putting a down payment on the vehicle.
-    Then there is the APRInfo class that will be getting things like
-    annual income and letter be getting information from the 
-    AllVehicles class which that class will be getting a vehicle 
-    that is ownned by the dealership, getting the cost and then 
-    calculcating the APR the interest and then the payments over the 
-    normal transaction process term of 72 months aka 6 years.
-    But I have not gotten to the calculations yet however those 
-    will be made soon. I thank you for your patience in reading this
-    and all of my code.
+    This program is called Kia Auto and it is meant to grab 
+    all personal information from the user and then grab the 
+    car they desired and the year of the car that they desire.
+    From there it grabs the kia car from the dictionary and the 
+    cost of the car and then whatever they put down on the vehicle is 
+    subtracted or if they put a trade in the cost of the vehicle they 
+    are trading in is priced by the year and subtracted from the 
+    vehicle they desires cost and from there the cost is divided into 
+    72 months and returns the cost of the vehicle before insurance.
+    Then when you hit the credit you can input your credit score and 
+    the cost of insurance each month and the insurance company 
+    and how much that they make and and the cost of the vehicle 
+    before insurance that was given to them and then they sign their name.
+    From there three txt files are created with their personal information
+    the vehicle that they chose and all their personal information and 
+    their estimated monthly cost before insurance, a file for all their 
+    credit info from their credit score to their monthly car payments with the
+    insurance on there. If they are denied its because they left something empty on
+    their personal information or did not fill it out, or they did not input 
+    their credit info at all. then they will get a denied letter for them
+    their credit info will not be saved nor will their personal information.
+    This is my final program, thank you for testing it.
 */
