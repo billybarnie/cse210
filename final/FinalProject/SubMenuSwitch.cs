@@ -33,6 +33,7 @@ class SubMenuSwitch
                     creditInfo.SaveToCSV();
                     break;
             }
+
         }
 
         downPayment = 0;
