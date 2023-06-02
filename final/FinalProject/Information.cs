@@ -63,14 +63,14 @@ abstract class Information
     public void DisplayGetIDIssueDate()
     {
         Console.WriteLine();
-        Console.Write("What is the issue date on your drivers license? ");
+        Console.Write("What is the issue date on your drivers license?(MM/DD/YYYY) ");
         _driversLicenseIssue = Console.ReadLine();
     }
 
     public void DisplayGetIDExpiration()
     {
         Console.WriteLine();
-        Console.Write("What is the expiration date on your drivers license? ");
+        Console.Write("What is the expiration date on your drivers license?(MM/DD/YYYY) ");
         _driversLicenseExpire = Console.ReadLine();
     }
 
@@ -139,7 +139,7 @@ abstract class Information
     public void DisplayGetMonthlyCarCost()
     {
         Console.WriteLine();
-        Console.Write("What was the cost of the vehicle before insurance? ");
+        Console.Write("What was the cost of the vehicle before insurance?(enter dollar amount only) ");
         _monthlyVehicleCost = int.Parse(Console.ReadLine());
     }
     
@@ -152,14 +152,14 @@ abstract class Information
     public void DisplayGetDebtAmount()
     {
         Console.WriteLine();
-        Console.Write("Do you have any outstanding debts or unpayed loans if so put the total amount here: ");
+        Console.Write("Do you have any outstanding debts or unpayed loans if so put the total amount here without commas: ");
         _loanSize = int.Parse(Console.ReadLine());
     }
 
     public void DisplayGetAnnualIncome()
     {
         Console.WriteLine();
-        Console.Write("What is your annual income? ");
+        Console.Write("What is your annual income?(Enter without commas) ");
         _annualIncome = int.Parse(Console.ReadLine());
     }
     public void DisplayGetInsuranceCompany()
@@ -171,14 +171,14 @@ abstract class Information
     public void DisplayGetInsuranceCost()
     {
         Console.WriteLine();
-        Console.Write("What is your monthly insurance cost? ");
+        Console.Write("What is your monthly insurance cost?(Enter only dollar amount) ");
         _insuranceCostMonthly = int.Parse(Console.ReadLine());
     }
 
     public void DisplayGetVerifyVehicle()
     {
         Console.WriteLine();
-        Console.Write("Verify the vehicle you are about to purchase by typing the model and year here: ");
+        Console.Write("Verify the vehicle you are about to purchase by typing the brand, model and year here: ");
         _verifyVehicle = Console.ReadLine();
 
     }
@@ -187,7 +187,7 @@ abstract class Information
     {
         Console.Clear();
         _tradeInVehicleDictionary.Clear();
-        Console.Write("What is the model of the vehicle being traded in? ");
+        Console.Write("What is the model of the vehicle being traded in?(enter brand and model) ");
         _vehicleTradeModel = Console.ReadLine();
     }
 

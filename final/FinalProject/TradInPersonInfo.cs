@@ -43,14 +43,14 @@ class TradeInInfo : Information
     public void DisplayGetModel()
     {
         Console.Clear();
-        Console.Write("What is the model of the vehicle you desire? ");
+        Console.Write("What is the model of the vehicle you desire?(Enter brand, kia, and model) ");
         _model = Console.ReadLine();
     }
 
     public void DisplayGetYear()
     {
         Console.WriteLine();
-        Console.Write("What is the year of the vehicle you desire?");
+        Console.Write("What is the year of the vehicle you desire? ");
         _year = int.Parse(Console.ReadLine());
     }
 

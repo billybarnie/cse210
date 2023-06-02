@@ -12,14 +12,14 @@ class DownPayment : Information
     {
         Console.Clear();
         Console.WriteLine();
-        Console.Write("How much are you putting down on said vehicle? ");
+        Console.Write("How much are you putting down on said vehicle?(Enter without commas) ");
         _putDown = int.Parse(Console.ReadLine());
 
     }
     public void DisplayGetModel()
     {
         Console.Clear();
-        Console.Write("What is the model of the vehicle you desire? ");
+        Console.Write("What is the model of the vehicle you desire?(Enter brand, kia, and model) ");
         _model = Console.ReadLine();
     }
 
